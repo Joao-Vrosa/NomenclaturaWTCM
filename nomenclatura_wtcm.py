@@ -4,9 +4,6 @@ print("\033[0;34m-\033[0;0m" * 35)
 print("\033[0;34mBem-vindo ao gerador de OUTBOX WTCM\033[0;0m")
 print("\033[0;34m-\033[0;0m" * 35)
 
-separarSTR = []
-acumuladorP = []
-parceiraFinal = ""
 letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 sleep(1)
@@ -18,6 +15,10 @@ while opcao != 2: # Inicio MENU
     opcao = int(input("\033[0;36mDigite a opção desejada: \033[0;0m"))
     
     if opcao == 1: # Opções MENU
+        separarSTR = []
+        acumuladorP = []
+        parceiraFinal = ""
+        
         num = int(input("\033[0;32m\nDigite o número, seguindo a ordem: \033[0;0m"))
         parceira = str(input("\033[0;32mDigite a parceira: \033[0;0m")).upper()
         conta = int(input("\033[0;32mDigite o número da conta: \033[0;0m"))
@@ -33,9 +34,9 @@ while opcao != 2: # Inicio MENU
                 
                 parceiraFinal = "".join(acumuladorP)
                 
-                '''
-                print("\n[ERRO] O campo 'Parceira' deve conter apenas letras, tente novamente!")
-                print("--- Digitos invalidos removidos! ---")'''
+        if separarSTR[i] not in letras:
+            print("\033[1;33m\n[ALERT] O campo 'Parceira' deve conter apenas letras!\033[0;0m")
+            print("\033[1;33m        --- Digitos invalidos removidos! ---\033[0;0m")
 
             
         print("\033[1;32m\n    --- COPIE A OUTBOX ---\033[0;0m")
